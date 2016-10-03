@@ -1,28 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='raw'>
-    <pages>
-        <page name='Page1_Classes'/>
-        <page name='Page1.1_Classes'/>
-        <page name='Page2_Exensions'/>
-        <page name='Page3_strings'/>
-        <page name='Page4_Closures'/>
-        <page name='Page5_NestedFunction'/>
-        <page name='Page6_CompletionHandler'/>
-        <page name='Page7_FunctionsParameters'/>
-        <page name='Page8_Optionals'/>
-        <page name='Page9_Switch'/>
-        <page name='Page10_ErrorHandling'/>
-        <page name='PAge11_Enums'/>
-        <page name='Page12_Generics'/>
-        <page name='PAge13_ErrorHandling2'/>
-        <page name='Page14_Operators'/>
-        <page name='Page15_Loops'/>
-        <page name='Test'/>
-        <page name='PAge16_Arrays'/>
-        <page name='Page17_Protocols'/>
-        <page name='Page18_Reference_and_Value_types'/>
-        <page name='PAge19_weakReferences'/>
-        <page name='Page4a_Closures_Escaping'/>
-        <page name='Page20_ObjectInitializers'/>
-    </pages>
-</playground>
+<playground version='6.0' target-platform='ios' display-mode='raw'/>

@@ -3,75 +3,129 @@
 import Foundation
 import UIKit
 
-
+/*
 // *****************  First you define a protocol and an extension ******************
 
-protocol Animal {
+protocol Actionable  {
     func eat() -> Void
     func hunt() -> Void
-    //func makeNoise() -> Void
-    
+    //func makeNoise() -> Void   // You can add method such as makeNoise directly in the Extension
 }
 
-
-extension Animal {
-    
-    func eat()-> Void  {
-        print("I am eating")
-    }
-
-    func hunt()->Void {
-        print("I am hunting")
-    }
-    
-    
-    func makeNoise()-> Void  {
-        print("I am making noise \n")
-    }
-
+extension Actionable {
+    func eat()-> Void  {  print("I am eating")   }
+    func hunt()->Void {  print("I am hunting")   }
+    //func makeNoise()-> Void  {  print("I am making noise \n")  }
 }  // end extension
 
 
 
 
- // You can extend any class to conform to any protocol
-// Here I am asking string to conform to Animal
- /// Therefore String now will have acces to all methods from Animal
+ // You can extend any class or struct to conform to any protocol
+ // Here I am asking string to conform to my Protocol
+ // Therefore String now will have acces to all methods from protocol
 
-extension String: Animal {
+extension String: Actionable  {
+    
+    func makeNoise(){
+        print("test")
+    }
 }
 
 
-class Cat: Animal {
-    
+struct Toy: Actionable  {
     var city: String?
     
-}  // end class
+}  // end struct
 
 
 
-var myAnimal = Cat()
+var myToy = Toy()    // initialize struct
+myToy.city = "sangli"
+var x: String!  = myToy.city
+
+print(" ********** Implement Protocol method using String object **********")
+x?.makeNoise()    // we are making a String object makeNoise 
 
 
-myAnimal.city = "sangli"
-var x: String!  = myAnimal.city
-x?.makeNoise()
 
 
-print ( "******************************")
-myAnimal.eat()
-myAnimal.hunt()
-myAnimal.makeNoise()
+
+
+print ( "\n \n \n ************ Implememt methods from my Struct  ******************")
+myToy.eat()
+myToy.hunt()
+//myToy.makeNoise()
 
 
 
 func isReferenceType(toTest: Any) -> Bool {
-    return toTest.dynamicType is AnyObject
+    return type(of: toTest) is AnyObject
 }
 
 
-isReferenceType(Animal)    // this shows that a protocl is not Reference Type
-isReferenceType(myAnimal)
+isReferenceType(toTest: Actionable.self )    // this shows that a protocl is not Reference Type
+isReferenceType(toTest: myToy)
+
+
+
+
+*/
+
+
+
+
+
+//  *****************  Let's create a UTIL Library **************************
+
+// Firts, define an empty protocol
+protocol Util {
+    
+}
+
+extension Util {
+    func climb () -> Void {  print("I am climbing ...")     }
+    func jump () -> Void {  print("I am jumping")   }
+    func doSomething()-> Void { print("Now I am doinhg something ...")  }
+    
+    
+    func getTimeDiffBetweenTwoDates (dt1: Date) -> Int  {
+        let currentDt = Date()
+        let elapsed = currentDt.timeIntervalSince(dt1)
+        let duration = Int(elapsed)
+        return duration
+    }
+    
+}  // end extension
+
+
+// Now we will create a class. That class should then be able to use any function in our Librray.
+class myVC: Util { }
+
+let temp = myVC()
+temp.climb()
+
+
+
+// Let's do the same for a Struct
+struct myStruct: Util {}
+
+let temp2 = myStruct()
+temp2.jump()
+
+// Let's calculate time difference
+let bDay1 = Date()
+sleep(20)
+let timeElapsed = temp2.getTimeDiffBetweenTwoDates(dt1: bDay1)
+print("Time elapsed \(timeElapsed) seconds")
+
+
+
+
+
+
+// ****************************************  END ******************************
+
 
 
 
