@@ -44,12 +44,13 @@ class Boy: Person {
     var boygender = "Fem"
     
     init(hobby:String, age:Int) {
-        super.init(fname: boyfname, lname: boylname, gender: boygender)
         self.hobby = hobby
         self.age = age
+        super.init(fname: boyfname, lname: boylname, gender: boygender)
+
     }
     
-    override func test(str: String) {
+    override func test(astr str: String) {
         print("Printing from test method of Boy class. you sent : \(str) \n" )
     }
     
@@ -82,6 +83,7 @@ print ("name is \(myBoy.lname) " )
 
 
 
+
 // *******************************************************
 
 
@@ -90,11 +92,10 @@ class Cow {
     class func alert() {
         print("I printed this ")
     }
-    
-    
+
 }
 
-
+// No need to create instance here
 Cow.alert()
 
 
