@@ -99,10 +99,14 @@ extension Util {
 }  // end extension
 
 
-// Now we will create a class. That class should then be able to use any function in our Librray.
+// Now we will create a class that confirms to Util protocol.
+// That class should then be able to use any function in our Librray.
 class myVC: Util { }
 
+
 let temp = myVC()
+
+// Execute a mehod from the Protocol
 temp.climb()
 
 
@@ -112,6 +116,7 @@ struct myStruct: Util {}
 
 let temp2 = myStruct()
 temp2.jump()
+
 
 // Let's calculate time difference
 let bDay1 = Date()

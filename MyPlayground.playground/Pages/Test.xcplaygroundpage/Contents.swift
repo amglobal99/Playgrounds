@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+message: //: [Previous](@previous)
 
 //: Playground - noun: a place where people can play
 
@@ -37,7 +37,7 @@ for index in 1..<5 {
 var cnt = 0
 repeat {
     print ("vlue is \(cnt) " )
-    cnt++
+    cnt += 1
 }while cnt < 5
 
 

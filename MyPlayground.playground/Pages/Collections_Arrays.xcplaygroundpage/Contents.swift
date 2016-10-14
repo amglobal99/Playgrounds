@@ -12,6 +12,12 @@ print (arr1.count )
 arr2 = ["Didi","Bindi","Megan"]
 //arr3 = [arr1,arr2]
 
+ 
+ var array2: [[String]]
+ array2 = [["Pickles","Jams"],["Mango","Amli","Tamarind"]]
+ 
+
+ 
 */
 
 
@@ -117,6 +123,7 @@ let sqmap2 = arr.map{$0 * 2}
 print("array multiplied by 2 :   \(sqmap2) ")
 
 
+
 // Give me oly even numbers
 print(arr)
 let evenNumbers = arr.filter {  $0 % 2 == 0 }
@@ -127,6 +134,7 @@ print("even numbers : \(evenNumbers)  ")
 var nArr1 = [1,5,7]
 let nArr2 = [9,2,4,5]
 nArr1 += nArr2    // this has duplicate values
+
 //var setX  = Set(nArr1)
 //nArr1 = Array(setX)
 

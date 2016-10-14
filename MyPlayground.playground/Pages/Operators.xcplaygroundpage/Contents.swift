@@ -8,12 +8,13 @@ var str = "Hello, playgrounds"
 
 
 var count: Int
+var newCount:Int = 5
 count = 10
 
 
 //var newCount = count++
 
-var newCount = ++count
+newCount += count
 
 
 
