@@ -2,27 +2,23 @@
 
 import Foundation
 
-/*
-var arr1: [String]
-var arr2: [String]
-var arr3: [[String]]
+// *******************************************************************************
 
-arr1 = ["Bussy","Ahmad","NAdine"]
-print (arr1.count )
-arr2 = ["Didi","Bindi","Megan"]
-//arr3 = [arr1,arr2]
+//                   ARRAYS 
 
- 
- var array2: [[String]]
- array2 = [["Pickles","Jams"],["Mango","Amli","Tamarind"]]
- 
-
- 
-*/
+// ********************************************************************************
 
 
 
-/*
+
+// ******************* Create Arrays ****************************************
+
+var friends: [String]        // simple array
+var otherFriends: [String]   // simple array
+var foods: [ [String]]        // an array containing other arrays
+var otherFoods:[[String]]
+
+
 
 // ************* Let's create an Array of structs *************
 
@@ -40,11 +36,28 @@ struct Person {
 }  // end struct
 
 
+//  ************* Assign values to arrays ************************************
+friends =  ["Bussy","Ahmad","NAdine", "JAcob","melanie","KAsey"]
+otherFriends = ["Jenny","Ramesh","Mala","Suraj"]
+foods = [["Sandwich","Reuben","PoBoy"],["CremeBrulee","Tiramisu","Pussing"],["Sundae","FAlooda","Tart"]]
+otherFoods = [ ["Mango","Papaya"],["Laddu","Barfi","Jalebi"],["CAshew","Almonds","Walnuts"]]
+
+
+
+
+// ******************* Manipulat our arrays *********************
+friends += otherFriends    // combine two arrays
+print( friends )
+
+
+print("*****************************************")
 
 var people:[Person] = [Person]() // initialize empty array
 
 var zara = Person(name:"Kelly",hobbies:["gym","knit","weave"],gym: ("pilates", 4) )
 var buddy = Person(name:"Buddy",hobbies:["bball","soccer","music"],gym:("swim",8))
+
+print ("******************************")
 print ( zara.hobbies)
 print(zara.gym.qty)
 
@@ -52,35 +65,37 @@ print(zara.gym.qty)
 people.append(zara)
 people.append(buddy)
 
-print("The struct has elements : \(people.count) ")
+print("The struct has  : \(people.count)  elements \n")
 
 print (people[1].name)
 print (people[0].hobbies)
 print(people[1].gym.class)
 
-*/
+
+print("******************************\n")
 
 
 
 
-
-// ********************** Sorting. Splitting etd .......
+// ********************** Sorting. Splitting etc .......
 
 
 var arr:[Int] = [Int]()
 
-arr.append(5)
-arr.append(2)
-arr.append(7)
-arr.append(9)
+arr = [50,10,20,15]
 
-print("my Test array: \(arr)  ")
+arr.append(25)
+arr.append(5)
+
+
+print("*********************************")
+print("my Test array: \(arr)  \n")
 
 arr.sort()   // Sort in place
-print("Arry soted in place \(arr)   " )
+print("Arry sorted in place: \(arr)   \n" )
 
 var sortedArr = arr.sorted()  // sort and assign to new variable
-print ("New Sorted Arry: \(sortedArr)  " )
+print ("New Sorted Arry: \(sortedArr)  \n" )
 
 
 // check how many Items the array has
@@ -93,6 +108,9 @@ for item in arr {
     print("Item: \(item)")
 }
 
+print("*****************************\n")
+
+
 
 // Reverse the array
 arr.reverse()
@@ -104,11 +122,12 @@ arr.remove(at: 2)
 //print(arr)
 
 arr.append(8)
-print(arr)
+arr.insert(35, at: 1)
+print("Array with 35 added : \(arr) \n ")
 
 
 
-
+// ****************** Higher order Functions ( Filter, MAp, Reduce ) *************************
 
 // Multiply all items by 2
 /*
@@ -120,40 +139,69 @@ print(sqmap)
 
 
 let sqmap2 = arr.map{$0 * 2}
+print("**************************************")
 print("array multiplied by 2 :   \(sqmap2) ")
+print("****************************************")
 
 
 
-// Give me oly even numbers
+// Add 10 to all numbers
+let sqmap3 = arr.map{$0 + 10}
+print("array with 10 added  :   \(sqmap3) ")
+print("****************************************\n")
+
+
+
+// Give me only even numbers
 print(arr)
 let evenNumbers = arr.filter {  $0 % 2 == 0 }
-print("even numbers : \(evenNumbers)  ")
+print("even numbers : \(evenNumbers)  \n")
 
 
-// Give me Unique elements .. remove dupliactes
+// reduce
+let arrTotal = arr.reduce(0, {$0 + $1})
+print(arrTotal)
+print("********************************t*****\n")
+
+
+
+
+
+
+// Give me Unique elements .. remove duplicates
 var nArr1 = [1,5,7]
 let nArr2 = [9,2,4,5]
-nArr1 += nArr2    // this has duplicate values
-
-//var setX  = Set(nArr1)
-//nArr1 = Array(setX)
-
-nArr1 = Array(Set(nArr1))
+nArr1 += nArr2    // combine arrays... this has duplicate values
+nArr1 = Array(Set(nArr1))   // remove duplicates
+print("Array with no duplicates : \(nArr1) ")
 
 
 
-// us23vfve reduce to get single elemen1t
+
+// reduce to get single elemen1t
 var amt = nArr1.reduce(0,{$0 + $1} )
 print(amt)
 
 
-// Now find the unique elements for nArr1
-var final = Array(Set(nArr1) )
+
+// ********** let's cut a piece of array************************
+
+var origArr:[Int]
+var sArr1:ArraySlice<Int>
+var sArr2:ArraySlice<Int>
+
+origArr = [30,4,26,12,44,8,66,11,22,77]
 
 
 
 
 
+sArr1 = origArr[0..<4]
+sArr2 = origArr[4...9]
+
+var finalArr = [Array(sArr1),Array(sArr2)]
+
+origArr.replaceSubrange(1...3, with: [1,2,3])
 
 
 

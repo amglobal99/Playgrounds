@@ -3,6 +3,10 @@
 import Foundation
 
 
+//****************************  FUNCTIONS *********************************
+
+
+
 /*
     Notes:
  
@@ -13,29 +17,35 @@ import Foundation
 
 
 
-/*
-
-func xyz  ( e1:String,  e2:String ) -> Void   {
 
 
-    print( "You gave me " + e1 + "  and  " + e2)
+func xyz  (e1:String,  e2:String ) -> Void   {
+    print( "You gave me \(e1)  and  \(e2)  \n ")
 }
 
 xyz( e1:"Mary",e2: "JAne")
 
 
-
-
-
-func transformString (_ string: String?) -> String {
-    assert(string != nil, "Invalid parameter") // here
-    return string! + "_transforme"
+// same Function with optional parameter name
+func xyz  (_ e1:String,  e2:String ) -> Void   {
+    print( "You gave me \(e1)  and  \(e2)  \n ")
 }
 
-var x = transformString("s" )
+xyz( "Mary_2",e2: "JAne_2")
+
+
+
+
+func transformString (_ str: String?) -> String {
+    assert(str != nil, "Invalid parameter") // here
+    return str! + "_transforme \n"
+}
+
+var x = transformString("This" )
 print (x)
 
 
+ /*
 
 // Return Tuple from Function
 func add (num1: Int, num2: Int, num3: Int) -> (Int, String)  {

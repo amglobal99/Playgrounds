@@ -6,7 +6,7 @@
 import Foundation
 import UIKit
 
-/*
+
 
 var myString:String?
 
@@ -14,9 +14,9 @@ var myString:String?
 
 
 if let yourString = myString {
-    print("yes sir")
+    print(yourString)
 } else {
-    print ("no")
+    print ("no \n")
 }
 
 var str1:String
@@ -30,13 +30,18 @@ print(str1)
 print(str2)
 print(str2!)
 
+print("*****************************")
+
+
 
 if let myVar  = str2 {
-    print ("Opt value is ther")
+    print ("Optional value is present  \n")
+} else {
+    print("this is nil \n **************************")
 }
 
 
-*/
+
 
 
 
@@ -47,7 +52,7 @@ if let myVar  = str2 {
  if let jack = hobby {
  print (jack)
  }else {
- print("no")
+ print("Jack variable is nil \n ******************************* \n")
  }
  
 
@@ -75,6 +80,7 @@ class Person: NSObject {
 var per:Person
 per = Person(name:"Katie", city:nil, state:"MH" )
 print(per.state)
+print("**********************************")
 
 
 
@@ -135,12 +141,12 @@ country = nil
 //import Cocoa
 
 var errorCodeString: String?
-errorCodeString = "404 - Page Not Found"
+errorCodeString = "404 - Page Not Found \n"
 
 if let theErr = errorCodeString {
     print(theErr)
 } else  {
-    print("Sorry it is nil")
+    print("Sorry it is nil \n")
 }
 
 
@@ -150,6 +156,28 @@ print("My let value is \(test)")
 
 
 // ==================  end section 2===================
+
+
+
+print("*******************************")
+
+func getHaterStatus(weather: String) -> String? {
+    if weather == "sunny" {
+        return nil
+    } else {
+        return "Hate"
+    }
+}
+
+
+
+var status: String?
+
+if let status = getHaterStatus(weather: "rainy")  {
+    print("Got a value \(status) ")
+} else {
+    print("It is a nillll")
+}
 
 
 

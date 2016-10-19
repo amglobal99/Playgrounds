@@ -6,22 +6,22 @@
               "age": 25
               },
               {
-              "name": "Mark",
+              "name": "Molly",
               "section":"Tech",
               "age": 29
               },
               {
-              "name": "Mary",
+              "name": "Doug",
               "section":"Photos",
               "age": 39
               },
               {
-              "name": "PAul",
+              "name": "Pam",
               "section":"Tech",
               "age": 49
               },
               {
-              "name": "Jeny",
+              "name": "Jerome",
               "section":"Photos",
               "age": 69
               },
@@ -31,7 +31,7 @@
               "age": 89
               },
               {
-              "name": "Sarah",
+              "name": "Tom",
               "section":"Photos",
               "age": 22
               }

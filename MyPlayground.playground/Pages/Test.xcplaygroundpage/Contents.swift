@@ -1,4 +1,4 @@
-message: //: [Previous](@previous)
+ //: [Previous](@previous)
 
 //: Playground - noun: a place where people can play
 
@@ -26,7 +26,7 @@ func test(message:String,  times:Int, city:String )  {
     
 }
 
-test("Jacj String", times: 5 , city:"Sangli")
+test(message: "Jacj String", times: 5 , city:"Sangli")
 
 
 for index in 1..<5 {
@@ -54,11 +54,9 @@ str4 = "test"
 var a = 10
 var b: Int = 4
 
-b += ++a
+b += a
 
-print ("a is \(a) and b is \(b) ")
-
-
+debugPrint ("a is \(a) and b is \(b) ")
 
 
 

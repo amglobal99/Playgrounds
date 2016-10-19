@@ -5,6 +5,10 @@ import UIKit
 
 
 
+
+
+
+
 /*
 
 class Person  {
@@ -121,27 +125,45 @@ Cow.alert()
 
 
 
+
+// ****************  THIS SECTION SHOWS US HOW OBJECTS ARE DEINITIALIZED
+// we get an idea when object are removed.
+//
+//  Keep in mind that an Object gets removed after its scope is done.
+//
+//  ******************************************************************************
+
+
+
+
+
+
+
+
+
 // ========== WHEN DOES AN OBJECT GET REMOVED FROM MEMORY ?? AND HOW TO MANUALLY REMOVE BY SETTING IT TO NIL ===============
 class Book {
     var bkName:String = "Atlas"
     
     deinit {
-        print("Book is being deinitialized ..")
+        print("Book is being DEINITIALIZED ..")
     }
 }
 
 
 func doSomething() {
     var myBook = Book()
-    print(myBook.bkName)
+    print("Book object created. Name is : \(myBook.bkName)  " )
+    print("---- Leaving Function ----")
 }
 
 
 
 do {
-    print(" **********************************")
+    print(" *********** Calling Function ***********************")
     var test = try doSomething()
-    print("************************************")
+    
+    print("***********  Fiished Function *************************")
 } catch  {
     print("an error occurred")
 }
@@ -151,10 +173,12 @@ do {
 
 
 
+ // Remove object by using it as Optional and setting to nil
 
 var myBook:Book? = Book()
-print(myBook!.bkName)
+print("Book name : \(myBook!.bkName)  " )
 myBook = nil    // Removed immediately
+print( " **************************** ")
 
 
 
@@ -182,20 +206,24 @@ class Teacher {
     }
     
     deinit{
-        print("Teaher is being deinitiliazed ..")
+        print("Teaher is being DEINITIALIZED ..")
     }
     
 }
 
         func tester() {
+            
                 var bk = Book()
                 var th = Teacher(name: "Kelly", bk: bk)
-            print("I am done executing this function...")
+                print("I am done executing this function...")
         }
 
 
     // CAll our test Function. After it completes, objects should get REMOVEd from memory
+    print("\n\n\n ***** Calling Tester Func *************")
     var x = tester()
+     print(" ******* Finished tester Func ********")
+
 
 
 

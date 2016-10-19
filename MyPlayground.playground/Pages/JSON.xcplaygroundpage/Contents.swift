@@ -2,6 +2,8 @@
 
 import Foundation
 import UIKit
+import XCPlayground
+
 
 
 /*
@@ -107,30 +109,48 @@ print(tempArray)
 
 
 
-            func getKeyArrayFromJSON(key: String, dictionary: [String: AnyObject]) -> [String]? {
+        func getKeyArrayFromJSON(rootElement:String?, key:String, jsonObject: [String: AnyObject]) -> [String]? {
+            
+            print("getKeyFromArray ...... stating")
+            
+            
+            var tempArray = [String]()   // create empty array
+           var objects:[ [String:AnyObject]]?
+            
+            
+            
+            if rootElement != nil {
                 
-                var tempArray = [String]()   // create empty array
+                print ("not nil")
                 
-                print("getKeyArrayFromJson: the key is : \(key)  ")
-                
-                                
                 guard
-                   // let users = dictionary[key] as? [[String: AnyObject]]
-                    let users = dictionary["users"] as? [[String: AnyObject]]
+                    
+                    let objects = jsonObject[rootElement!] as? [[String: AnyObject]]
+                   // let users = jsonObject["countries"] as? [[String: AnyObject]]
                 else {
-                    print("returning a nil")
+                    print("is nil...")
+                    fatalError("messed up ..")
                     return nil
-                }  // end guard
-                
-                for user in users {
+                }
+            
+            
+            } else {
+                let objects = jsonObject
+            }
+           
+            
+                for user in objects! {
+                    
+                    print("loop")
                     guard
                         let key = user[key] as? String
                     else {
                         break
                     }
                     tempArray.append(key)
-                }  // end for loop
-                
+                }  // for users
+            
+            
                 // return array
                 return Array(Set(tempArray)  )
                 
@@ -141,81 +161,202 @@ print(tempArray)
 
 
 
-            func getDictionaryFromJson(key1: String, key2:String, jsonObject: [String: AnyObject]) -> [String:[String]]?  {
+func getDictionaryFromJson(rootElement:String, categoryElement: String, valueElement :String, jsonObject: [String: AnyObject]) -> [String:[String]]?  {
     
-                var finalDict = [String:[String]]()
-                print("wil get array using key : \(key1)")
-                var keyArray:[String] = getKeyArrayFromJSON(key: key1, dictionary: jsonObject)!
+                var finalDictionary = [String:[String]]()
+                var keyArray:[String] = getKeyArrayFromJSON(rootElement: rootElement, key: categoryElement, jsonObject: jsonObject)!
                 print(keyArray)
             
-                print ("key1: \(key1) \n key2: \(key2)")
+                print ("key1: \(categoryElement) \n key2: \(valueElement)")
             
                 var tempArr = [String]()   // temporary storage
                 
                 for item in keyArray {  // Process each section
                          guard
-                            let users = jsonObject["users"] as? [[String: AnyObject]]
+                            let users = jsonObject[rootElement] as? [[String: AnyObject]]
                          else {
                             return nil
                         }
                    
                         // process all items and check for items that match item
                          for user in users {
-                            var val1 = user[key1] as? String
-                            var val2 = user[key2] as? String
+                            var val1 = user[categoryElement] as? String
+                            var val2 = user[valueElement] as? String
                             if val1 == item {
                                 tempArr.append(val2!)
                             }
-                        } // for user in users
+                        }
 
                             // Now add an entry to our final Dictonary
-                            finalDict.updateValue(tempArr, forKey: item)
+                            finalDictionary.updateValue(tempArr, forKey: item)
+                    
+                            // clear array
+                            tempArr.removeAll()
                         
-                    }// for item in keyArray
+                    }// item in keyArray
  
                     // Return the final Dictionary
-                    return finalDict
+                    return finalDictionary
                 
             }  // end funtion
 
 
 
-
-
-
+/*
 
 //  ********************** MAIN LOOP ****************************************************************
 
-        print("Starting .....")
+                print("Starting .....")
 
-            let url = Bundle.main.url(forResource: "data", withExtension: "json")
+           // let urlStr = "https://api.github.com/users/amglobal99/repos"
+           // let urlStr = "https://jsonplaceholder.typicode.com/todos"
 
-            do {
-                let data = try Data(contentsOf: url!)
-                let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                if let dictionary = object as? [String: AnyObject] {
+                do {
+                    /*
+                    let session:URLSession = {
+                    let config = URLSessionConfiguration.default
+                    return URLSession(configuration: config)
+                    } ()
+                    */
+                     let session = URLSession.shared
+                    let url = URL(string:"https://jsonplaceholder.typicode.com/todos" )
+                    var urlRequest = URLRequest(url: url!)
+                    let response:URLResponse?
+                    //urlRequest.httpMethod = "GET"
+                
+            print("starting Task")
+                
+                let task = session.dataTask(with: urlRequest)
+                
+                {  ( data, response, error) -> Void in
+                    if data != nil {
+                        if let jsonData = data {
+                            do {
+                                /*
+                                if let  dataString = String(data: data!, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))   {
+                                    print(dataString)
+                                } // dataString
+                                */
+                            
+                                   let object = try JSONSerialization.jsonObject(with: jsonData, options: [])
+                                    print (object)
+                             
+                            } catch {
+                                
+                            }
+                        } //jsonData = data
+                    } // data != nil
                     
-                    //readJSONObject(object: dictionary)
-                    //convertJSONObject(object: dictionary)
-                    //var myKeyArray:[String] = getKeyArrayFromJSON(key: "section", object: dictionary)!
-                    //print(myKeyArray)
-                    
-                    
-                    var dict:[String:[String]] =  getDictionaryFromJson(key1: "section", key2: "name", jsonObject: dictionary)!
-                    
-                    print(dict)
-                    
-                    
-                }
+                } /// end closure
+                
+                
+                
+                task.resume()
+                
+                
+                print("after")
+                XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
+                
+             
+                
             } catch {
                 print("error")
             }
 
 
 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  ********************************************************************************************************
+
+
+
+
+
+
+
+//  ********************** MAIN LOOP *************  WORKING  COPY***************************************************
+
+print("Starting .....")
+
+let url = Bundle.main.url(forResource: "data", withExtension: "json")
+
+do {
+    let data = try Data(contentsOf: url!)
+    let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+    
+    //print(object)
+    
+    
+    
+    
+    
+    if let dictionary = object as? [AnyObject] {
+        
+        print("everything ok...")
+        
+        //readJSONObject(object: dictionary)
+        //convertJSONObject(object: dictionary)
+        //var myKeyArray:[String] = getKeyArrayFromJSON(key: "section", object: dictionary)!
+        //print(myKeyArray)
+        
+        
+        /*
+        var keyArray:[String] = getKeyArrayFromJSON(rootElement: nil, key: "section", jsonObject: dictionary)!
+        print(keyArray)
+
+        */
+        
+        
+        
+        
+        /*
+       
+        
+        var dict:[String:[String]] =  getDictionaryFromJson(rootElement:"users", categoryElement: "section", valueElement: "name", jsonObject: dictionary)!
+        
+        print(dict)
+        
+        */
+        
+        
+    } else {
+        print("vvvv")
+    }
+    
+    
+    
+} catch {
+    print("error")
+}
+
+
+
 
 
 //  ************************************************************************************
+
 
 
 
