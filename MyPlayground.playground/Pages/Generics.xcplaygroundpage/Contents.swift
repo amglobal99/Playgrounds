@@ -50,6 +50,12 @@ let morePairs = pairsFromDictionary(dictionary: [1: "Swift", 2: "Generics", 3: "
 
 
 
+
+
+
+
+
+
 func swapValues<T>( a: T,  b: T) -> (T) {
  //   let temporaryA = b
     let b = a
@@ -70,13 +76,106 @@ protocol ReusableView { }
 
 func register <T:UITableViewCell where T:ReusableView > ( param1: T.Type  ) -> Void {
     
-    
-    
 }
 
 
 let cell = UITableViewCell()
 
+
+
+
+
+
+class Stack<T,E:Hashable> {
+    
+    var items = [T]()
+    var dict = [E:T]()
+    
+    func push(element:T){
+        items.append(element)
+    }
+    
+    func pop( ) -> T {
+       return items.popLast()!
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+func genericTest<T:UIView>(name: T.Type) -> Void {
+    print("thanks..")
+    print(v.tintColor)
+}
+
+
+var v = UIView()
+
+genericTest(name: type(of:v ) )
+
+
+var x = type(of: v)
+var y = type(of:"jack")
+    
+    
+
+
+
+// **************************************************************************** 
+
+// http://stackoverflow.com/questions/35089223/swift-generics-function-with-t-type-as-parameter-returns-optional-t
+
+
+
+extension UINavigationController {
+    func jpFindFirst<T: UIViewController>(_: T.Type) -> T? {
+        for viewController in viewControllers {
+            if let viewController = viewController as? T {
+                return viewController
+            }
+        }
+        return nil
+    }
+}
+
+
+
+class FooViewController : UIViewController { }
+class BarViewController : UIViewController { }
+
+let fooViewController = FooViewController()
+let barViewController = BarViewController()
+
+let navController = UINavigationController(rootViewController: fooViewController)
+navController.addChildViewController(barViewController)
+
+print(navController.jpFindFirst(type(of: fooViewController)) ?? "None found.")
+
+print(navController.jpFindFirst(type(of: barViewController)) ?? "None found.")
+
+
+
+// ***************************************************************************************** 
+
+
+
+/*
+
+var v = UIView()
+
+type(of: v)
+
+var x = UIViewController()
+type(of:x)
+
+*/
 
 
 

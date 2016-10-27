@@ -46,7 +46,4 @@ var charCount = jack.characters.count
 
 
 
-
-
-
 //: [Next](@next)

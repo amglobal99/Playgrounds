@@ -31,6 +31,11 @@ print (String(test.year) )
 */
 
 
+
+
+
+
+
 /*
 
 enum Season {
@@ -51,8 +56,12 @@ switch ssn {
         print("hello ..." + name  )
 }
 
-
 */
+
+
+
+
+
 
 
 
@@ -93,6 +102,7 @@ default:
 
 
 
+
 /*
 
  //   This is how enums are normally used throughout Apple APIs
@@ -123,6 +133,10 @@ switch photoResult {
 
 
 
+
+
+
+/*
 
 
 struct Person{
@@ -170,6 +184,13 @@ case let Result.failure(err):
     print("Bummer.. failure")
     
 }
+
+
+
+
+*/
+
+
 
 
 

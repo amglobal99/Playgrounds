@@ -52,7 +52,8 @@ print( friends )
 
 print("*****************************************")
 
-var people:[Person] = [Person]() // initialize empty array
+var people = [Person]() // initialize empty array
+
 
 var zara = Person(name:"Kelly",hobbies:["gym","knit","weave"],gym: ("pilates", 4) )
 var buddy = Person(name:"Buddy",hobbies:["bball","soccer","music"],gym:("swim",8))
@@ -80,7 +81,11 @@ print("******************************\n")
 // ********************** Sorting. Splitting etc .......
 
 
-var arr:[Int] = [Int]()
+var arr:[Int] = []
+//var arr = [Int]()    // this is shorter version of above line. Both do same thing
+
+
+
 
 arr = [50,10,20,15]
 
@@ -202,6 +207,18 @@ sArr2 = origArr[4...9]
 var finalArr = [Array(sArr1),Array(sArr2)]
 
 origArr.replaceSubrange(1...3, with: [1,2,3])
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

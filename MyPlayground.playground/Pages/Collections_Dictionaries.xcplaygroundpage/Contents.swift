@@ -69,8 +69,9 @@ print("***************************")
 
 
 
+var teams:[String:String] = [String:String]()
 
-
+teams = ["Atlanta":"Falcons","Miami":"Dolphns","Seatle":"Seawaks"]
 
 
 

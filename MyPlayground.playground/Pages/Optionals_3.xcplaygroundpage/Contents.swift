@@ -123,8 +123,4 @@ var netaBalance:Int? = myCountry.pm?.getBalance(height: 60)
 
 
 
-
-
-
-
 //: [Next](@next)
