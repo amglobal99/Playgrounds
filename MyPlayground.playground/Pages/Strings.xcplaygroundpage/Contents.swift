@@ -45,5 +45,23 @@ var charCount = jack.characters.count
 
 
 
+let str1 = "\"jack\",\"pauline\" "
+
+print (str1)
+
+
+
+debugPrint(str1)
+
+
+var str2 = "hello world tommy"
+
+
+str2.substring(to: 3)
+
+
+
+
+
 
 //: [Next](@next)

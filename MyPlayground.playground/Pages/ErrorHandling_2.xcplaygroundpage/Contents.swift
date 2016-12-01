@@ -16,6 +16,8 @@ func f1GetPersonDetails() throws -> String  {
     print("Calling f2 method")
     let  details = try f2GetHobbyAndAge(hobby: "cooking")
     
+    print("Completed f2 call")
+    
     print("  Value of details is : " + details)
     var tempArray: [String] = [String]()
     tempArray.append("Jack")
@@ -27,11 +29,11 @@ func f1GetPersonDetails() throws -> String  {
 }
 
 
-func f2GetHobbyAndAge (hobby:String) throws  -> String {
+func f2GetHobbyAndAge (hobby:String)  throws  -> String {
     print("Starting f2")
     print("calling f3 method ")
     
-    let age = try f3GetAge(num: 200)
+        let age = try f3GetAge(num: 200)
     
     print ("Completed f3 call")
     
@@ -42,16 +44,13 @@ func f2GetHobbyAndAge (hobby:String) throws  -> String {
 }
 
 func f3GetAge (num:Int) throws  -> Int {
-    print("Starting f3")
-    
+        print("Starting f3")
         if num >= 200 {
             throw MyError.JackError(errMsg: "You made a mistake .... please check !!")
         }
-    
         let x = num/5
-    
-    print ( "   f3 - Returning : " + String(x))
-    return x
+        print ( "   f3 - Returning : " + String(x))
+        return x
 }
 
 
@@ -69,7 +68,6 @@ print(".....STARTING MAIN...\n")
                 //print ( myError.JackError(errMsg: <#T##String#>))
         }
 
-        
 print("\n.....DONE PROCESING MAIN..")
 
 

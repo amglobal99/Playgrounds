@@ -58,7 +58,7 @@ var people = [Person]() // initialize empty array
 var zara = Person(name:"Kelly",hobbies:["gym","knit","weave"],gym: ("pilates", 4) )
 var buddy = Person(name:"Buddy",hobbies:["bball","soccer","music"],gym:("swim",8))
 
-print ("******************************")
+//print ("******************************")
 print ( zara.hobbies)
 print(zara.gym.qty)
 
@@ -96,7 +96,7 @@ arr.append(5)
 print("*********************************")
 print("my Test array: \(arr)  \n")
 
-arr.sort()   // Sort in place
+arr.sort()  // Sort in place
 print("Arry sorted in place: \(arr)   \n" )
 
 var sortedArr = arr.sorted()  // sort and assign to new variable
@@ -191,12 +191,11 @@ print(amt)
 
 // ********** let's cut a piece of array************************
 
-var origArr:[Int]
+var origArr:[Int] = []
 var sArr1:ArraySlice<Int>
 var sArr2:ArraySlice<Int>
 
 origArr = [30,4,26,12,44,8,66,11,22,77]
-
 
 
 
@@ -212,11 +211,10 @@ origArr.replaceSubrange(1...3, with: [1,2,3])
 
 
 
-
-
-
-
-
+var strArr = ["jack","mary","bon"]
+var abc = strArr.joined(separator: ",")
+print("***** str *****")
+print(abc)
 
 
 

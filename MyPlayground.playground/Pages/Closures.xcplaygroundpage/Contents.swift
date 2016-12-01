@@ -6,7 +6,7 @@ import UIKit
 
 
 
-/*
+
 var myClosure:(String)->() =
     {
             (str:String)->() in
@@ -26,18 +26,14 @@ func doProcessing(input: String, completion:(String) -> Void )  {
 
 
 // call the function
-doProcessing("This is Apple")
+doProcessing(input: "This is Apple")
     {
     (result:String)->Void  in
-        print("got back: \(result) \n" )
+        print("got back: \(result) \n +++++++++++++++++++++++++++++++++++++\n" )
     }
-*/
 
 
 
-
-
-/*
 
 
 //  ===========================  SECTION II =======================================
@@ -86,24 +82,17 @@ secondClosure!("new")
 
 
 
-// =================  CLOSURES 2  ===========================================
 
 
 
-*/
-
-
-
-
-/*
 
 
 // =================  SECTION 3 =============================================
 
 var cls = {
-    (str:String)->() in
-    print ("I am printing the value passed into my closure: \(str)  ")
-}
+        (str:String)->() in
+        print ("I am printingg the value passed into my closure: \(str)  ")
+    }
 
 
 // Assign closure to another var
@@ -111,9 +100,9 @@ var otherCls = cls
 
 
 func celebrate(name:String, completion:(String)->() ) -> String  {
-    
+    print("starting")
     NSLog("Starting celebrate ")
-    var temp = "Kanadi"
+    var temp = "Kanadis"
     completion(temp)
     NSLog("Finished closure call")
     
@@ -121,15 +110,12 @@ func celebrate(name:String, completion:(String)->() ) -> String  {
 }
 
 
-
-var thisStr = celebrate(name: "xxx", completion: otherCls)
-
+var thisStr = celebrate(name: "xxxx", completion: otherCls)
 
 
 //  ==========================================================================
 
 
-*/
 
 
 
@@ -140,13 +126,17 @@ var thisStr = celebrate(name: "xxx", completion: otherCls)
 
 
 
-// ********************* ClOSURE CAPTURE LIST *********************
+
+
+/*
+
+//  ===========================  ClOSURE CAPTURE LIST  ==============================================
 //
 //  A capture list captures values as of the time the closure is created
 //  In our example, our var has captured one instance of MyClass.
 //  So it prints Initial VAlue
 //
-//   Now if we craete another instance and assign to sam evar, our var still has old instnace cpatured
+//   Now if we craete another instance and assign to same var, our var still has old instnace cpatured
 //   The new assigment does not chnage wht out closure has oin its memory
 
 
@@ -158,10 +148,11 @@ class MyClass {
 
 var instance = MyClass()
 
-var clos = { [instance] in print(instance.value)  }   // closure captures current value
+var clos = { [instance] in print(instance.value)  }   // closure captures current instance of the object
 
-instance = MyClass()    // comment this line to see difference. It should print Update Value
+ instance = MyClass()    // We are creaeting a second instance. comment this line to see difference. It should print Update Value
 instance.value = "Upadated Value"
+
 
 
 // Run the closure
@@ -170,14 +161,13 @@ clos()
 
 
 
-//*******************************************************************
+// ============================================================================
 
+*/
+ 
 
-
-
-
-
-
+ 
+ 
 
 
 //: [Next](@next)
