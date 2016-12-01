@@ -19,7 +19,7 @@ import Foundation
 
 
 // a simple function with Parameter names
-func send  (e1:String,  e2:String ) -> Void   {
+func send  ( e1:String,  e2:String ) -> Void   {
     print( "Send1 Method --> Printing \(e1)  and  \(e2)  \n ")
 }
 
@@ -56,7 +56,7 @@ send4 ( city:"Miami", "Crystal")
 
 
 
-print ("**************************************************************************\n")
+print ("*******************************************************\n")
 
 
 
@@ -82,11 +82,11 @@ func add (num1: Int, num2: Int, num3: Int) -> (Int, String)  {
 }
 
 var tot = add(num1:10, num2: 20, num3: 30)
-print("Tuple is:  \(tot)  \n***************************************************** \n ")
+print("Tuple is:  \(tot)  \n**************************************** \n ")
 
 
 
-// *********************** Parameter Names Examples **************************************
+// ************ Parameter Names Examples **************************************
 
 // Function with only parameter names, no extrenal argument names
 func dojack (this: String, andThat:String) ->String {
@@ -140,25 +140,42 @@ func greet (name: String, comp: ()->Void )  {
     comp()
 }
 
-greet(name:"Majorie") { print("test \n ****************************************************\n") }
+greet(name:"Majorie") { print("test \n *************************\n") }
 
 
+// anothere example
+func smile(name:String,comp:(String,Int)-> Void) {
+    print("My name is \(name)")
+    comp("jack",2)
+}
 
 
+smile(name: "Helen")
 
-
-// How to use a Functon as func parameter
+{ str,count  in
+    print("Now name is \(str) and qty was \(count)" )
+}
+    
+print("++++++++++++++++++++++++++++++++++")
+    
+    
+    
+    
+    
+    // How to use a Functon as func parameter
 func addTwoInts(a: Int, _ b: Int) -> Int {
     return a + b
 }
 
-func printMathResult(mathFunction: (Int,Int)->Int, a: Int,  b: Int) {   // first param is a function
+func printMathResult(mathFunction: (Int,Int)->Int, a: Int,  b: Int) {   // first parameter 1 is a function
     print("Result: \(mathFunction(a, b))")
 }
 
 var myFunc:(Int,Int)->Int = addTwoInts
+//printMathResult(mathFunction: myFunc, a:5, b:10)
+printMathResult(mathFunction: addTwoInts , a:15, b:10)
 
-printMathResult(mathFunction: myFunc, a:5, b:10)
+
 print("\n********************************************************************\n")
 
 
