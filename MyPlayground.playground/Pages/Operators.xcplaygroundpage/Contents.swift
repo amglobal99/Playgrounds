@@ -68,7 +68,8 @@ func mult (int1:Int, int2:Int) -> Int {
     
     if howManyNegatives == 1 {
         print("one")
-        return total * -1
+        //return total * -1
+        return -(total)
     } else {
         return total
     }
@@ -76,7 +77,7 @@ func mult (int1:Int, int2:Int) -> Int {
 }
 
 
-var test = mult(int1: -5, int2: -2)
+var test = mult(int1: -5, int2: 2)
 
 print(test)
 
