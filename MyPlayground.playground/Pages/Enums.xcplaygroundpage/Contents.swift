@@ -3,6 +3,9 @@
 import Foundation
 
 
+
+
+/*
 enum Device {
     case iphone
     case ipad
@@ -58,7 +61,7 @@ switch ssn {
 }
 
 
-
+*/
 
 
 
@@ -103,7 +106,7 @@ default:
 
 
 
-
+/*
 
 
  //  ************ This is how enums are normally used throughout Apple APIs **************
@@ -127,6 +130,14 @@ switch photoResult {
         case  Result.failure(let error ) :
             print("    PhotosViewController.swift : Error fetching recent photos \(error)")
 }
+
+
+
+*/
+
+
+
+
 
 
 
@@ -192,6 +203,14 @@ case let Result.failure(err):
 
 
 ///========================= Generic Enums ===================================
+/*
+enum Result<T> {
+    case success(T)
+    case failure(Error)
+}
+*/
+
+
 
 enum Result<Value> {
     case success(Value)
@@ -211,6 +230,15 @@ case .failure:
 
 
 
+// Check for a specific case ONLY
+if case  Result.success(let resArr) = gotIt {
+    print("Associated value is : \(resArr) ")
+}
+
+
+if case Result.success = gotIt {
+    print("sssssss")
+}
 
 
 
@@ -237,11 +265,12 @@ enum Movie{
 // OPTION I
 var var1 = Test.one   // enu Test has value of one
 var mov1 = Movie.Cast(["amitabh","rakhi","menna"])
+print("++++++++++++++++++++++++++++++++++++")
 print(var1)
 print(mov1)
 
 
-// OPTION II
+// OPTION II ..... create an instance
 var var2 = Test(rawValue: "two") // NOTE: Test enum is of type String
 print(var2!)
 
@@ -263,6 +292,149 @@ case .Budget:
 
 
 
+
+// PATTERN MATCHING 
+
+
+
+enum Zone {
+    case East
+    case West
+    case North
+}
+
+
+var result = Zone.West
+
+
+// Normal switch
+switch result {
+    case .East:
+        print("east")
+    case .West:
+        print("westtttt")
+    default:
+        break
+}
+
+
+
+
+// ******** Swift way of Pattern matching in if statements
+if case Zone.West = result {     /// NOTE:  It is =  not ==
+    print("yes .. match")
+}
+
+
+if result == Zone.West {
+    print("west")
+}
+
+
+
+
+
+
+
+// ======== *******   Use this technique to convert a String to an Enum ======
+// THIS IS VERY IMPORTANT .... always try to use ENum instead of String
+// For example, let's say you have a struct called "Student"
+// Struct has properties such as NAme, Grade, Height, and say City.
+// Let's assume that students can only be from 3 cities -"Kanadi","Kupe", "Chandgad"
+// Now instead of storing this valeu as String, we list this property as an Enum
+// Student aslos has phot stored. This can be png, jpg or gif ONLY. We will convert that string value to Enum also
+/**
+    Struct Student {
+        name: String,
+        grade: Int,
+        city: City,
+        photo: MimeType
+    }
+ 
+ 
+ We will create two enums, City and MimeType
+ 
+ MORAL OF STORY: Wherever you have a String var, whihc can have only say 4or 5 values, convert to Enum
+ 
+ */
+
+
+enum MimeType:String {
+    
+    init?(rawValue: String) {
+        switch rawValue {
+        case "STUDENT/JPEG":
+            self = .jpg
+        case "STUDENT/PNG":
+            self = .png
+        case "STUDENT/GIF":
+            self = .gif
+        default:
+            return nil
+        }
+    }
+    // These are our cases
+    case jpg
+    case png
+    case gif
+}
+
+
+enum City: String {
+    
+    init? (rawValue: String) {
+        switch rawValue {
+        case "KANADI":
+            self = .kanadi
+        case "KUPE":
+            self = .kupe
+        case "CHANDGAD":
+            self = .chandgad
+        default:
+            return nil
+        }
+    }
+    // These are our cases
+    case kanadi
+    case kupe
+    case chandgad
+}
+
+
+
+struct Student {
+    var name: String
+    var grade: Int
+    var photo: MimeType
+    var city: City
+    
+    init(name:String, grade:Int, photo: String, city:String) {
+        self.name = name
+        self.grade = grade
+        self.photo = MimeType(rawValue: photo)!
+        self.city = City(rawValue: city)!
+    }
+}
+
+
+
+let str = "STUDENT/JPEG"
+let mType = MimeType(rawValue: str)
+print(mType)
+print(mType!)
+
+
+let str2 = "CHANDGAD"
+let city = City(rawValue: str2)
+print(city!)
+
+
+
+// craete new Student
+let stud = Student(name: "JACKO", grade: 5, photo: "STUDENT/PNG", city: "KUPE")
+
+
+dump(stud)
 
 
 //: [Next](@next)

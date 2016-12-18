@@ -7,6 +7,7 @@ import Foundation
 var firstArray:[Int] = [11,5,22,44,16,56,4,9,77,6]
 
 
+
 //Print original array
 print("original array: \(firstArray)")
 
@@ -133,6 +134,9 @@ print("Array with elements less than 18 : \(t) \n")
 var arr1 = [2,4,10]
 var xx = arr1.reduce(0) {$0 + $1 }
 print("Sum is : \(xx) " )
+
+
+
 
 
 // Another format

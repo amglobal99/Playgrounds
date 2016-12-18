@@ -3,88 +3,58 @@
 import Foundation
 
 
-
-/*
-
-enum SegHobby: String {
-    case TheRedPillExperience
-    case TheBluePillExperience
-}
-
-
-let  identifier = "TheRedPillExperience"
-let segIdentifier = SegHobby(rawValue: identifier)
-
-
-print(segIdentifier!.rawValue)
-
-switch segIdentifier! {
-case .TheRedPillExperience:
-    print("😈")
-case .TheBluePillExperience:
-    print("👼")
-}
-
-*/
-
-
-
-
-
-enum topics {
-    case History([String])
-    case Physics(String)
-}
-
-let hist = ["a","b","l"]
-let var1 = topics.History(hist)
-let var2 = topics.Physics("test")
-
-print(var2)
-
-
-
-
-
-enum Zone {
-    case East
-    case West
-    case North
-}
-
-
-var v1 = Zone.West
-
-/*
-switch v1 {
-case .East:
-    print("eaete...")
-case .West:
-    print("west......")
-default:
-    print("defualu .....")
-}
-
-
-*/
-
-// ******** Swift way of Pattern matching in if statements
-if case Zone.West = v1 {     /// NOTE:  It is =  not ==
-    print("yes .. match")
-}
-
-
-if v1 == .West {
-    print("west")
+enum Team: String {
+    
+    init?(rawValue: String){
+        switch rawValue{
+            case "TEAM/FAL":
+                self = .falcons
+            case "TEAM/BEA":
+                self = .bears
+            case "TEAM/JET":
+                self = .jets
+            default:
+                return nil
+        }
+    }
+    
+    case falcons
+    case bears
+    case jets
 }
 
 
 
 
+struct Person {
+    var name: String
+    var age: Int
+    var team: Team
+    
+    init(name:String, age:Int, team:Team) {
+        self.name = name
+        self.age = age
+        self.team = Team(rawValue: "TEAM/BEA")!
+    }
+    
+}
+
+
+let tm = Team(rawValue: "TEAM/JET")
+print(tm!)
+
+
+let per = Person(name: "PAUL", age: 7, team: Team(rawValue: "TEAM/BEA")!  )
+dump(per)
+
+let res = Team.bears
+
+print(res)
 
 
 
 
 
 
-//: [Next](@next)
+
+

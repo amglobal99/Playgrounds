@@ -4,34 +4,15 @@
 
 import UIKit
 
-var str = "Hello, playground"
-var city:String = "Pune"
-
-
-func printHelloWorld() {
-    print("Hello worldsr")
-    
-}
-
-
-
-printHelloWorld()
-
 
 func test(message:String,  times:Int, city:String )  {
-    for i in 0..<times {
+    for i in 1...times {
         print("This is \(message) and int is \(i) ad city is \(city)"  )
     }
-    
-    
 }
 
-test(message: "Jacj String", times: 5 , city:"Sangli")
+test(message: "Jacjo", times: 5 , city:"Sangli")
 
-
-for index in 1..<5 {
-    print (index )
-}
 
 
 var cnt = 0
@@ -41,28 +22,92 @@ repeat {
 }while cnt < 5
 
 
-
-
-var str4:String?
-
-str4 = "test"
-
-
-
-
-
-var a = 10
-var b: Int = 4
-
-b += a
-
-debugPrint ("a is \(a) and b is \(b) ")
-
-
-
-
-
-
-
-
+ 
+ 
+ // Function to swap any two values using 1 line of code
+ func swap2<T>(_ a: inout T, _ b: inout T  )  {
+    (a,b) = (b,a)
+ }
+ 
+ var n1 = "Jack"
+ var n2 = "paul"
+ 
+ swap2(&n1,&n2)
+ 
+ n1
+ 
+ 
+ func flexStrings(s1:String = "", s2:String = "") -> String {
+    return s1+s2 == "" ? "none" : s1+s2
+ }
+ 
+ flexStrings()
+ flexStrings(s1:"One")
+ flexStrings(s1:"One",s2:"two")
+ 
+ 
+ 
+ 
+ // Generic function to compare two values
+ 
+ func evenArr(a:[Int]) -> [Int] {
+    var result: [Int] = []
+    for elem in a {
+        if elem > 10 {
+            result.append(elem)
+        }
+    }
+    return result
+ }
+ 
+ 
+ 
+ 
+ func mult(a:Int,b:Int) -> Int? {
+    var result: Int?
+    var total: Int = 0
+    
+    guard a != 0 && b != 0 else {
+        return nil
+    }
+    
+    for _ in 1...b {
+        total += a
+        print("total is \(total) " )
+    }
+    
+    return total
+    
+ }
+ 
+ 
+ var x = mult(a: 5, b: 4)
+ 
+ print(x!)
+ 
+ 
+ 
+ 
+ 
+ func enjoy( par: Any ...) -> String{
+    return String(par.count)
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ func countFrom(from: Int, to: Int) {
+    print(from) // output to the assistant editor
+    if from < to {
+        countFrom(from: from + 1, to: to)
+    }
+ }
+ 
+ 
+ countFrom(from: 2, to: 6)
+ 
+ 
 //: [Next](@next)

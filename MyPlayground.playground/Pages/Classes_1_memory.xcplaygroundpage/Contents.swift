@@ -7,9 +7,8 @@ import UIKit
 
 
 
-
-
 /*
+
 
 class Person  {
     
@@ -64,37 +63,59 @@ class Boy: Person {
     
 } // end Boy class
 
-// ===========================================================================
+// ======================================================================
+
 
 
 
 var jack:Person = Person(fname: "Jacob",lname: "Smith",gender: "Female")
+print("+++++++++++++++++++ didSet and WillSet will not fire for statement above +++++++++\n\n")
+
+
 
 jack.fname = "Don"
 jack.lname = "Trump"
 
+print("++++++++++++++++++++++++++++")
+
+
+
 print ( "Fullname is \(jack.fname) \( jack.lname) \n ")
+print("++++++++++++++++++++++++++++++++++++++++\n\n")
+
+
 jack.lname = "Patel"
 jack.fname = "Shahrukh"
 print("Firtsname is now \(jack.fname) \n")
+
+print("++++++++++++++++++++++++++++++++++++++++\n\n")
 
 
  // *********************************************************** 
 
 
 var myBoy:Person  = Boy(hobby: "Sports", age: 2)
-
 myBoy.test(astr: "Jacko")
+print ("name is \(myBoy.lname) \n\n" )
 
-print ("name is \(myBoy.lname) " )
+
 
 print( " ***********************")
 dump(myBoy)
-print(" ********************** ")
+print(" **********************\n\n ")
+
+
+ */
 
 
  
- */
+ 
+ 
+ 
+ 
+ 
+
+ 
  
  
  /*
@@ -130,6 +151,8 @@ Cow.alert()
 // we get an idea when object are removed.
 //
 //  Keep in mind that an Object gets removed after its scope is done.
+// Scope can be for example , say a Function.
+// Once functon is completed, object is GONE
 //
 //  ******************************************************************************
 

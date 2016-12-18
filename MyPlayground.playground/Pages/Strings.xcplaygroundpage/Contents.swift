@@ -25,14 +25,15 @@ let a = String(true)
 // Example of computeed Property
 let jack: String  = {
     var a = "Hello"
-    var b = "pUne"
+    var b = "pUne\u{1F496}🇺🇸"
     b += a
     return b
 } ()
 
-print ("I have jack value as  \(jack) ")
+print ("My computed string is:   \(jack) ")
 
 
+var myChar = jack.characters
 
 var charCount = jack.characters.count
 
@@ -62,6 +63,13 @@ var dd2  = str2.substring(from: idx) // from includes the index position
 // give me 5 char from end
 var index3 = str2.index(str2.endIndex, offsetBy: -6)
 var dd3 = str2.substring(from: index3)
+
+
+// give me string between position 3 and 7
+let start = str2.index(str2.startIndex, offsetBy: 2)
+let end = str2.index(str2.endIndex, offsetBy: -2)
+let range = start..<end
+let dd4 = str2.substring(with: range)
 
 
 
