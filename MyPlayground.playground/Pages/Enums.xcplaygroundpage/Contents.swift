@@ -5,7 +5,7 @@ import Foundation
 
 
 
-/*
+
 enum Device {
     case iphone
     case ipad
@@ -33,6 +33,13 @@ print (String(test.year) )
 
 
 
+
+
+
+
+
+
+/*
 
 
 
@@ -203,20 +210,20 @@ case let Result.failure(err):
 
 
 ///========================= Generic Enums ===================================
-/*
+
 enum Result<T> {
     case success(T)
     case failure(Error)
 }
-*/
 
 
 
+/*
 enum Result<Value> {
     case success(Value)
     case failure(Error)
 }
-
+*/
 
 var resArr = ["Pim","min","jon","carla"]
 var gotIt = Result.success(resArr)

@@ -16,28 +16,6 @@ func adderInt(x: Int, _ y: Int) -> Int {
 let intSum = adderInt(x: 1, 2)
 
 
-let numbers = [1,3,5]
-let firstNumber = numbers[0]
-
-
-
-var numbersAgain = Array<Int>()
-numbersAgain.append(1)
-numbersAgain.append(2)
-numbersAgain.append(3)
-
-let firstNumbersAgain = numbersAgain[0]
-
-
-let countryCodes = ["Austria":"AT", "Spain" : "SP", "USA" : "US", "Turkey" : "TU", "England" : "Eng"]
-let at = countryCodes["USA"]
-
-
-let optionalName = Optional<String>.some("John")
-if let name  = optionalName {
-    
-}
-
 
 func pairsFromDictionary<KeyType, ValueType> (dictionary: [KeyType: ValueType] ) -> [(KeyType, ValueType)] {
     return Array(dictionary)
@@ -49,8 +27,22 @@ let morePairs = pairsFromDictionary(dictionary: [1: "Swift", 2: "Generics", 3: "
 
 
 
+print(pairs)
+
+print(morePairs)
 
 
+
+
+var dict = [1:"jack", 2:"pauline", 4:"test"]
+var a = Array(dict)
+print(a)
+
+
+for (k,v) in a {
+  print(" \(k) :  \(v)")
+  
+}
 
 
 
@@ -120,11 +112,6 @@ var v = UIView()
 
 genericTest(name: type(of:v ) )
 
-
-var x = type(of: v)
-var y = type(of:"jack")
-    
-    
 
 
 

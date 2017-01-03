@@ -9,18 +9,18 @@ import UIKit
 class Person {
     
     let name: String
+    var apartment:Apartment?
+
     
     init(name:String) {
         self.name  = name
         print("PErson class is being initialized")
     }
     
-   var apartment:Apartment?
     
     deinit {
         print("Person class is being DEINITIALIZED")
     }
-    
     
 }  // end class
 
@@ -29,19 +29,18 @@ class Person {
 class Apartment {
     
     let unit:String
+    weak var tenant:Person?
+
     
     init(unit: String) {
         self.unit =  unit
         print("Apartment is being Initialized")
-        
     }
     
-    weak var tenant:Person?
     
     deinit{
         print("Apartment is being DEINIT")
     }
-    
     
 }
 
@@ -72,14 +71,23 @@ reference3 = nil
 var john: Person?
 var unit4A: Apartment?
 
+print("++++++++++ Creating Perosn class ++++++++++++")
 john = Person(name: "Johny Appleseed")
+print("---------- Creating Apartment class ------------")
 unit4A = Apartment(unit: "4A")
 
 
 john!.apartment = unit4A
 unit4A?.tenant = john
 
+
+dump(john)
+
+
+
+print("++++++++++ Setting Person class to nil+++++++++++++++")
 john = nil
+print("+++++++++++setting Apetment to nil ++++++++++++++++++++++")
 unit4A = nil
 
 

@@ -120,11 +120,22 @@ temp2.jump()
 
 // Let's calculate time difference
 let bDay1 = Date()
-sleep(20)
+sleep(2)
 let timeElapsed = temp2.getTimeDiffBetweenTwoDates(dt1: bDay1)
 print("Time elapsed \(timeElapsed) seconds")
 
 
+
+// ==========  Use a variable of type 'Protocol'
+// The trick here is you can assign any value to this var which conforms to that Protocol
+
+var tmp: Util
+class Boy: Util {}
+
+print("+++++++++++++++ last ++++++++++++")
+var me = Boy()
+tmp = me
+tmp.doSomething()
 
 
 

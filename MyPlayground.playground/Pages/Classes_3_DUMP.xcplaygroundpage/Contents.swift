@@ -3,6 +3,8 @@
 import Foundation
 
 
+
+
 // +++++++++++++++++++ Main class ++++++++++++++++++++
 class Person {
     
@@ -27,6 +29,9 @@ class Person {
 // ++++++++++++++++++++++ level 1 class +++++++++++++++++++++
 class Boy: Person {
 
+        
+    
+    
     override func test(str:String) {
        // super.test(str: "melanie")
         print("Printing from Boy. name is \(str) " )
@@ -61,7 +66,6 @@ class Child: Boy {
 
 
 var bb = Boy(name: "KIm")
-
 //bb.test(str: "pim")
 bb.doThis(aStr: "jack")
 
@@ -69,6 +73,41 @@ bb.doThis(aStr: "jack")
 
 
 
+
+
+
+
+
+
+
+/*
+
+class Person {
+    var name:String
+    var age:Int
+    
+    init(name:String, age:Int ){
+        self.name = name
+        self.age = age
+    }
+}
+
+
+
+class Apartment{
+    var unit:Int
+    var tenant: Person?
+    
+    init(unit:Int, tenant: Person){
+        self.unit = unit
+        self.tenant = tenant
+    }
+    
+}
+
+
+
+*/
 
 
 

@@ -110,4 +110,38 @@ repeat {
  countFrom(from: 2, to: 6)
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ // ========= NIl Coalescing +++++++++++++
+ var opt:Int?
+ var second:Int = 42
+ 
+ 
+ let n = opt ?? second
+ 
+ print (n)
+ 
+ 
+ 
+ var b = 10
+ var y = 15
+ 
+ 
+ let expr = b > y
+ let ans = expr ? "yes": "no"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 //: [Next](@next)
