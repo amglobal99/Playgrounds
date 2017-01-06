@@ -119,7 +119,7 @@ repeat {
  
  // ========= NIl Coalescing +++++++++++++
  var opt:Int?
- var second:Int = 42
+ var second:Int? = 42
  
  
  let n = opt ?? second
@@ -137,11 +137,22 @@ repeat {
  
  
  
+ func test() {
+ 
+  
+ guard let breed =  second else {
+   print("ddd")
+  return
+ }
  
  
- 
- 
- 
- 
+  print("++++++  \(breed)  ")
+  
+  
+    
+  
+  
+  
+ }
  
 //: [Next](@next)

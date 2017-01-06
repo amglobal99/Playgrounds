@@ -166,7 +166,7 @@ print("even numbers : \(evenNumbers)  \n")
 // reduce
 let arrTotal = arr.reduce(0, {$0 + $1})
 print(arrTotal)
-print("********************************t*****\n")
+print("**************** TOT ****************t*****\n")
 
 
 
