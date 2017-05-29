@@ -227,10 +227,65 @@ print("Final Total : \(final2)  " )
 
 
 
+// Find leat difference between two elements
+let arr6:[Int] = [5,11,22,41,19,8,15,1]
+let arrSorted = arr6.sorted()
+var leastDiff = 0
+
+for i in 0...(arrSorted.count - 2){
+  var diff:Int = arrSorted[i + 1] - arrSorted[i]
+  if i == 0 || diff < leastDiff {
+    leastDiff = diff
+  }
+} // end for
+
+
+print("Least diff is \(leastDiff) ")
 
 
 
 
+// Move all ZEROS to end of array
+var arr8 = [4,0,9,2,0,1]
 
+func modify(arr: inout [Int] )  {
+  for i in 0..<arr8.count {
+    print(i)
+    print("Before: \(arr) ")
+    
+    if arr[i] == 0 {
+      arr.append(0)
+      print("Appended: \(arr) ")
+      arr.remove(at: i)
+    }
+    
+    print("After: \(arr) " )
+    print("++++++++++++++++++++++++")
+    
+  } // for loop
+  
+  
+}
+
+
+modify(arr: &arr8)
+
+
+
+/// Option 2 .... Move ZEROS to end
+var arr9 = [4,0,9,2,0,1]
+arr9.sort{ $1 == 0 }
+print(arr9)
+
+
+/*
+arr9.sort(by:) {
+  int1, int2 in
+    return int2 == 0
+}
+
+print(arr9)
+
+*/
 
 //: [Next](@next)

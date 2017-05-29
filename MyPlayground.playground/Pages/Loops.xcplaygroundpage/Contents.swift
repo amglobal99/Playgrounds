@@ -5,8 +5,14 @@ import Foundation
 
 var i: Int
 
+// Closed Range loop
 for i in 1...5 {
     print("This value is \(i) ")
+}
+
+
+for i in 0...5 {
+  print("Count is \(i) ")
 }
 
 
@@ -29,6 +35,17 @@ while true {
     }
     
 }  // end while
+
+
+
+
+var x = 0
+
+repeat {
+  print("I is \(x)")
+  x+=1
+  
+} while x < 5
 
 
 

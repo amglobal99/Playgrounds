@@ -2,47 +2,29 @@
 
 import Foundation
 
-var dict: [String:[String]] = [:]
-var dict1:[String:Int]
-var dict2:[String:String] = [:]
+var dict1: [String:[String]] = [:]
+var dict2:[Int:String]
+var dict3:[String:String] = [:]
+
+
+dict1 = ["8":["f","j"],"22":["e","d"],"11":["w","d"],"4":["a","u"]]
+dict2 = [10: "Jack",5:"PAul",2:"Karla", 9:"cara"]
+dict3 = ["9":"jack","2":"paul","3":"kim", "6":"min"]
+
+
 
 /*
-dict = ["8":["f","j"],"22":["e","d"],"11":["w","d"],"4":["a","u"]]
-dict1 = ["Jack": 10,"PAul":5,"Karla":2]
-dict2 = ["1":"jack","2":"paul","3":"kim"]
+var keyArr = Array(dict2.values)
+print(keyArr)
 
-
-var fil1 = dict.filter{ $0.value.contains("d") }
-print(fil1)
-
-print(fil1[0])
-print(fil1[0].key)
-print(fil1[0].value)
-
-var fil2 = dict.filter { Int($0.key)! > 8 }.map{$0.key }
-print(fil2)
-
+print(Array(dict2.keys))
 */
 
 
 
+var large = dict2.filter{$0.key > 5 }.map{"\($0.value) TT" }
 
-var dict3:[Int:String] = [:]
-dict3 = [4:"mili", 7:"jaosn",3:"kim",11:"jenna",2:"karly",1:"ana"]
-
-dict3.count
-var eidx = dict3.endIndex
-var sidx = dict3.startIndex
-
-// Get array of keys .. method 1
-var kys = Array(dict3.keys)
-
-
-//get array of keys .... method 2
-var keyArr = [Int](dict3.keys)
-print(keyArr)
-
-
+print(large)
 
 
 

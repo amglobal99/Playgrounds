@@ -4,7 +4,7 @@ import Foundation
 
 
 
-
+/*
 
 enum Device {
     case iphone
@@ -28,10 +28,10 @@ enum Device {
 
 
 var test = Device.ipad
-
+//test = .iphone
 print (String(test.year) )
 
-
+*/
 
 
 
@@ -79,7 +79,6 @@ switch ssn {
 /*
 
 
-
 // ==========================================
 
 enum Hobby{
@@ -95,28 +94,28 @@ var hobby2 = Hobby.Sports("Greet", 15)
 
 switch hobby2 {
     
-case .Sports(let var1, let var2) where var2  > 10 :
-    print("sports \(var1) and \(var2)")
-case .Knitting(let num):
-    print("Knitting \(num)")
-case .Gardening:
-    print("gardening")
-default:
-    print("default")
-    
+    case .Sports(let var1, let var2) where var2  > 10 :
+        print("sports \(var1) and \(var2)")
+    case .Knitting(let num):
+        print("Knitting \(num)")
+    case .Gardening:
+        print("gardening")
+    default:
+        print("defaults")
+  
 }
 
 // =======================================
+
+
+
 
 */
 
 
 
 
-/*
-
-
- //  ************ This is how enums are normally used throughout Apple APIs **************
+ //  **** This is how enums are normally used throughout Apple APIs **************
 
 
 enum Result{
@@ -125,7 +124,7 @@ enum Result{
 }
 
 // First you process your data and then put in in an array or String or Dictionary
-var tempArray = ["Ball","bat","Net","Stumps"]
+var tempArray = ["Ball","bat","Net","Stumpss"]
 
 // Then you create an Enum copy to hold this value. We'll call this copy 'photoResult'
 var photoResult: Result  = Result.success(tempArray)
@@ -134,13 +133,12 @@ var photoResult: Result  = Result.success(tempArray)
 switch photoResult {
         case Result.success(let var1):
             print("    Successfully found \(var1.count) recent photos. First is  \(var1[1])" )
-        case  Result.failure(let error ) :
-            print("    PhotosViewController.swift : Error fetching recent photos \(error)")
+        case  Result.failure(let err ) :
+            print("    PhotosViewController.swift : Error fetching recent photos \(err)")
 }
 
 
 
-*/
 
 
 
@@ -153,6 +151,7 @@ switch photoResult {
 
 
 /*
+
 
 
 struct Person{
@@ -192,7 +191,7 @@ switch result {
     
     
 case let Result.success(var1):
-    print("We did get success \n. Printing results")
+    print("We did get success. Printing results")
     for name in var1 {
         print("Firstname: \(name.firstName) Lastname: \(name.lastName)  City: \(name.city)")
     }
@@ -202,21 +201,26 @@ case let Result.failure(err):
 }
 
 
-
-
 */
 
 
 
 
-///========================= Generic Enums ===================================
+
+
+
+
+/*
+
+
+///=========== Generic Enums ===================================
 
 enum Result<T> {
     case success(T)
     case failure(Error)
 }
 
-
+*/
 
 /*
 enum Result<Value> {
@@ -229,10 +233,10 @@ var resArr = ["Pim","min","jon","carla"]
 var gotIt = Result.success(resArr)
 
 switch gotIt {
-case .success:
-    print("succes")
-case .failure:
-    print("fail")
+    case .success:
+        print("succes")
+    case .failure:
+        print("fail")
 }
 
 
@@ -243,15 +247,11 @@ if case  Result.success(let resArr) = gotIt {
 }
 
 
-if case Result.success = gotIt {
-    print("sssssss")
-}
 
 
 
 
-
-// ************************* HOW TO SET AND RETRIEVE VALUES from Enum *************************
+// ********** HOW TO SET AND RETRIEVE VALUES from Enum *********
 
 
 enum Test:String {
@@ -270,16 +270,17 @@ enum Movie{
 
 
 // OPTION I
-var var1 = Test.one   // enu Test has value of one
-var mov1 = Movie.Cast(["amitabh","rakhi","menna"])
-print("++++++++++++++++++++++++++++++++++++")
-print(var1)
+var var1 = Test.two   // enu Test has value of one
+var mov1 = Movie.Cast(["amitabh","rakhi","mennas"])
+print("+++++++++++++++++++++++++++++++++++++++")
+print(var1 )
 print(mov1)
 
 
 // OPTION II ..... create an instance
 var var2 = Test(rawValue: "two") // NOTE: Test enum is of type String
 print(var2!)
+
 
 
 // ***************** retriev values ********************
@@ -442,6 +443,8 @@ let stud = Student(name: "JACKO", grade: 5, photo: "STUDENT/PNG", city: "KUPE")
 
 
 dump(stud)
+
+
 
 
 //: [Next](@next)

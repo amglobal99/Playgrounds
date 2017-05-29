@@ -10,6 +10,9 @@ enum myError : Error {
 
 
 
+
+/*
+
 func divide(a: Int, b: Int)  throws  -> Int {
     print("starting divide method")
     
@@ -30,7 +33,7 @@ func printArray( teams:[String]) throws -> Int {
     for i in 1...2 {
         print (teams[i])
     }
-    print("*********************************************************************")
+    print("*************************************************")
     
          //let result = try divide(a:50, b: 5)
         let result = try divide(a: 50, b: 0)
@@ -74,10 +77,14 @@ func printArray( teams:[String]) throws -> Int {
 
 
 
+*/
 
 
 
 
+
+
+/*
 
 
  // ********************* Example # 2 ****************************************************************************
@@ -115,12 +122,14 @@ do {
 
 
 
+*/
 
 
 
 
 
-/*
+
+
 
 // ******************* Example 3 .... using nil and Optionals to handle errors ***********************
 
@@ -134,7 +143,7 @@ if let plays = try? String(contentsOfFile:"foo.bar") {
 
  
 
-*/
+
 
 
 

@@ -12,26 +12,34 @@ var arr4:[Int] = [44,33,77,11,16]
 
 
 
+/// Array sort using closure
+
+var arr10 = [14,8,22,7,9,11]
+arr10.sort {$0 < $1 }
+
+print(arr10)
 
 
-var new = arr4.reduce(0){$0 + $1}
 
+/// Sort numeric Strings
+var arr11 = ["23","7","11","5","190","44"]
+var new = arr11.sorted()
 
-
+/*
+var new = arr11.sorted (by:){
+  
+  (str1, str2) -> Bool in
+  return Int(str1)! < Int(str2)!
+  
+}
+  */
 
 print(new)
 
 
 
+print("***************************************\n\n")
 
 
 
 
-
-
-
-
-
-
-
-//: [Next](@next)

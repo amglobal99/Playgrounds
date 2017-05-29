@@ -10,10 +10,18 @@ import UIKit
 
 var myString:String?
 
-//myString = "Hello World here"
+myString = "Hello World here"
 
 
-if let yourString = myString {
+
+
+//if let yourString = myString, (myString?.characters.count)! > 5 {
+  
+  if let yourString = myString, yourString.characters.count > 25 {
+    
+    
+    
+  
     print(yourString)
 } else {
     print ("no \n")

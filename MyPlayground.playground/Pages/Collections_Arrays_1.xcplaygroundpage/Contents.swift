@@ -20,6 +20,7 @@ var otherFoods:[[String]]
 
 
 
+
 // ************* Let's create an Array of structs *************
 
 struct Person {
@@ -143,7 +144,7 @@ print(sqmap)
 */
 
 
-let sqmap2 = arr.map{$0 * 2}
+let sqmap2 = arr.map{  $0 * 2}
 print("**************************************")
 print("array multiplied by 2 :   \(sqmap2) ")
 print("****************************************")
