@@ -1,18 +1,9 @@
 //: [Previous](@previous)
+var capitals: [String:String] = [:]
 
-import Foundation
+capitals["india"] = "delhi"
+capitals["usa"] = "dc"
 
-var str = "Hello, playground"
-
-
-struct Paint {
-    var color:String
-    var qty: Int
-}
+print(capitals)
 
 
-
-var myClr = Paint(color: "red", qty: 2)
-
-
-//: [Next](@next)

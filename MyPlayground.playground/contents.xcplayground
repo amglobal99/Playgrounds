@@ -47,5 +47,7 @@
         <page name='Numbers_Decimal'/>
         <page name='weakReferences'/>
         <page name='zzDump'/>
+        <page name='zzDumpJAck'/>
+        <page name='Optionals_Jack'/>
     </pages>
 </playground>

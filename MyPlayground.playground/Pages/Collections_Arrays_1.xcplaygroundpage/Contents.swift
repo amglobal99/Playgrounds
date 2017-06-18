@@ -21,6 +21,9 @@ var otherFoods:[[String]]
 
 
 
+
+
+
 // ************* Let's create an Array of structs *************
 
 struct Person {
@@ -51,7 +54,9 @@ friends += otherFriends    // combine two arrays
 print( friends )
 
 
-print("*****************************************")
+print("\n\n*****************************************\n\n")
+
+
 
 var people = [Person]() // initialize empty array
 
@@ -62,6 +67,7 @@ var buddy = Person(name:"Buddy",hobbies:["bball","soccer","music"],gym:("swim",8
 //print ("******************************")
 print ( zara.hobbies)
 print(zara.gym.qty)
+print("\n\n*****************************************\n\n")
 
 
 people.append(zara)

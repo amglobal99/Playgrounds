@@ -14,18 +14,17 @@ myString = "Hello World here"
 
 
 
+      if let yourString = myString, yourString.characters.count > 5 {
+        print(yourString)
+    } else {
+        print ("no \n")
+    }
 
-//if let yourString = myString, (myString?.characters.count)! > 5 {
-  
-  if let yourString = myString, yourString.characters.count > 25 {
-    
-    
-    
-  
-    print(yourString)
-} else {
-    print ("no \n")
-}
+
+print("**********************************\n\n\n")
+
+
+
 
 var str1:String
 var str2:String?

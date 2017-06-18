@@ -26,6 +26,10 @@ func send  ( e1:String,  e2:String ) -> Void   {
 send( e1:"Mary",e2: "JAne")
 
 
+
+
+
+
 // same Function with optional parameter name
 func send2  (_ e1:String,  e2:String ) -> Void   {
     print( "Send2 method --> Printing \(e1)  and  \(e2)  \n ")

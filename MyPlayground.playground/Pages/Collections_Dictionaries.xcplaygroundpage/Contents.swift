@@ -34,7 +34,7 @@ for (key,_) in dict1 {
     print(key)
 }
 
-print("***************************")
+print("***************************\n\n")
 
 
  // print both key and values
@@ -42,8 +42,7 @@ for (key, value) in dict1 {
     print("\(key) ++++ \(value)")
 }
 
-print("***************************")
-
+print("***************************\n\n")
 
 
 

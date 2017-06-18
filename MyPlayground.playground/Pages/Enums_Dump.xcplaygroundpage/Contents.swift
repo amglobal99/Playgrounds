@@ -65,6 +65,8 @@ struct Person {
 
 
 let per = Person(name: "PAul", age: 8, team: "TEAM/JET" )
+
+print("**********************************************")
 dump(per)
 print(per.team.city)
 

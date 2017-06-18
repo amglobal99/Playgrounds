@@ -232,12 +232,14 @@ enum Result<Value> {
 var resArr = ["Pim","min","jon","carla"]
 var gotIt = Result.success(resArr)
 
+/*
 switch gotIt {
     case .success:
         print("succes")
     case .failure:
         print("fail")
 }
+*/
 
 
 
@@ -445,6 +447,28 @@ let stud = Student(name: "JACKO", grade: 5, photo: "STUDENT/PNG", city: "KUPE")
 dump(stud)
 
 
+
+
+
+
+
+
+
+
+
+// This is how it is done in Alamofire
+
+public enum HTTPMethod: String {
+  case options = "OPTIONS"
+  case get     = "GET"
+  case head    = "HEAD"
+  case post    = "POST"
+  case put     = "PUT"
+  case patch   = "PATCH"
+  case delete  = "DELETE"
+  case trace   = "TRACE"
+  case connect = "CONNECT"
+}
 
 
 //: [Next](@next)
