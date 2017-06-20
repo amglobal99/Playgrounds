@@ -16,18 +16,13 @@ func centsToDollars(amt: Int) -> Double {
 var names = ["katie","jenny","leena", "meena", "john", "pam", "anna"]
 
 
-var price = 6.25
+var amt:NSDecimalNumber = 123.65
 
-var qty = 4.5
-
-
-var a:Int = 625
-var b:Int = 450
-
-var total:Int = a * b
+amt.adding(4.50)
 
 
-var final = centsToDollars(amt: total)
 
 
-print(final)
+
+
+
