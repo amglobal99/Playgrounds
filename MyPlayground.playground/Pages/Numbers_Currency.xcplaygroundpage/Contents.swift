@@ -150,6 +150,8 @@ extension String {
 
 func toNSDecimal(str: String) -> NSDecimalNumber {
   return formatter.number(from: str) as? NSDecimalNumber ?? 0
+  
+  
 }
 
 }  // end extension
